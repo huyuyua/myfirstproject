@@ -1,0 +1,70 @@
+name: A-share market temperature
+
+on:
+  schedule:
+    # GitHub cron 使用 UTC；以下对应北京时间工作日 09:30-11:30、13:00-15:00。
+    - cron: "30,40,50 1 * * 1-5"
+    - cron: "*/10 2 * * 1-5"
+    - cron: "0,10,20,30 3 * * 1-5"
+    - cron: "*/10 5-6 * * 1-5"
+    - cron: "0 7 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "交易时段外也运行一次（用于部署测试）"
+        type: boolean
+        default: true
+      test_email:
+        description: "发送163邮箱配置测试邮件"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: a-share-market-temperature
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Asia/Shanghai
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+      FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.force || false }}
+      TEST_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.test_email || false }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect, persist and alert
+        shell: bash
+        run: |
+          args=()
+          if [[ "$FORCE_RUN" == "true" ]]; then args+=(--force); fi
+          if [[ "$TEST_EMAIL" == "true" ]]; then args+=(--test-email); fi
+          python cloud_monitor.py "${args[@]}"
+
+      - name: Persist history back to repository
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs state
+          if git diff --cached --quiet; then
+            echo "No history changes to commit"
+            exit 0
+          fi
+          git commit -m "data: update market temperature $(date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,21 @@
+{
+  "timezone": "Asia/Shanghai",
+  "interval_minutes": 10,
+  "sessions": [
+    ["09:30", "11:30"],
+    ["13:00", "15:00"]
+  ],
+  "symbols": {
+    "shanghai": "sh000001",
+    "shenzhen": "sz399001"
+  },
+  "request_timeout_seconds": 15,
+  "request_retries": 3,
+  "retry_backoff_seconds": 1.5,
+  "tencent_day_url": "https://web.ifzq.gtimg.cn/appstock/app/day/query?code={symbol}",
+  "tencent_quote_url": "https://qt.gtimg.cn/q={symbols}",
+  "database_path": ".runtime/market_temperature.sqlite3",
+  "dashboard_path": "docs/index.html",
+  "latest_json_path": "docs/latest.json",
+  "log_path": ".runtime/market_temperature.log"
+}
