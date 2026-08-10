@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-10T12:40:30+08:00",
+  "reports": [
+    {
+      "trade_date": "2026-08-10",
+      "market_state": "结构分化",
+      "score": -12.5,
+      "tail_flow": "平稳",
+      "html": "history/2026/2026-08-10.html",
+      "json": "history/2026/2026-08-10.json"
+    }
+  ]
+}
