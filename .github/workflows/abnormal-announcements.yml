@@ -1,0 +1,71 @@
+name: A-share abnormal announcements
+
+on:
+  schedule:
+    # GitHub cron 使用 UTC；00:00 UTC 对应北京时间工作日 08:00。
+    - cron: "0 0 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "首次/人工扫描向前追溯的自然日数（1-30）"
+        type: string
+        default: "3"
+      test_email:
+        description: "只发送163邮箱配置测试邮件，不推进扫描状态"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: a-share-abnormal-announcements
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      TZ: Asia/Shanghai
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+      ALERT_TO: ${{ secrets.ALERT_TO }}
+      LOOKBACK_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.lookback_days || '3' }}
+      TEST_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.test_email || false }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-abnormal-announcements.txt
+
+      - name: Install PDF text extractor
+        run: python -m pip install --disable-pip-version-check -r requirements-abnormal-announcements.txt
+
+      - name: Scan Tencent announcements and send email
+        shell: bash
+        run: |
+          args=(--lookback-days "$LOOKBACK_DAYS")
+          if [[ "$TEST_EMAIL" == "true" ]]; then args+=(--test-email); fi
+          python abnormal_announcement_monitor.py "${args[@]}"
+
+      - name: Persist scan history back to repository
+        if: ${{ success() && env.TEST_EMAIL != 'true' }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/abnormal-announcements state/abnormal_announcements.json
+          if git diff --cached --quiet; then
+            echo "No abnormal-announcement history changes to commit"
+            exit 0
+          fi
+          git commit -m "data: update abnormal announcements $(date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main
