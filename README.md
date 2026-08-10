@@ -35,6 +35,30 @@ Tushare 的全市场实时日线 `rt_k` 需要单独开通权限。当前实现�
 
 可在 GitHub 的 `Actions → A-share market temperature → Run workflow` 中勾选 `test_email`，人工发送一次163邮箱配置测试邮件。
 
+## 盘前异动公告邮件
+
+仓库还包含独立工作流 `A-share abnormal announcements`，工作日北京时间 `08:00` 在 GitHub 云端运行，不依赖本地电脑开机。它通过腾讯财经公开接口取得全量 A 股代码、批量公告列表和公告正文，并覆盖以下提醒口径：
+
+- 公告正文中的 `20%` 收盘价涨跌幅偏离异动，以及明确写有 `20个交易日` 的异动。
+- `30个交易日` 偏离异动；同时兼容在第 20—30 个交易日提前达到 `+200%/-70%` 等阈值的严重异常波动公告。
+- 下跌方向异动的第 2 次和第 3 次：优先识别公告中的明确表述，未明确标序号时按同一股票近 30 自然日腾讯异动公告计数。
+
+只有发现尚未提醒过的目标公告时才发送邮件，同一腾讯公告 ID 只发送一次。扫描记录持久化到：
+
+- `docs/abnormal-announcements/latest.json`：最近一次扫描结果。
+- `docs/abnormal-announcements/history/YYYY/YYYY-MM-DD.json`：按扫描日归档。
+- `docs/abnormal-announcements/history/YYYY/YYYY-MM-DD.csv`：Excel 可打开的明细。
+- `state/abnormal_announcements.json`：上次成功扫描时间、历史事件和邮件去重状态。
+
+它复用现有的 `SMTP_USERNAME`、`SMTP_APP_PASSWORD`；可选的 `ALERT_TO` 未配置时默认发送给 `SMTP_USERNAME`。在 GitHub 的 `Actions → A-share abnormal announcements → Run workflow` 中勾选 `test_email`，可发送一封配置测试邮件，且不会推进正式扫描状态。
+
+本地只扫描、不发邮件、不写状态：
+
+```powershell
+python -m pip install -r .\requirements-abnormal-announcements.txt
+python .\abnormal_announcement_monitor.py --dry-run --lookback-days 3
+```
+
 ## 立即运行
 
 无需安装第三方包，使用 Python 3.9+：
