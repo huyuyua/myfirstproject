@@ -70,7 +70,7 @@ python .\abnormal_announcement_monitor.py --dry-run --lookback-days 3
 
 在 `Settings → Secrets and variables → Actions → Variables` 中维护：
 
-- `DAILY_REPORT_RECIPIENTS`：逗号、分号或换行分隔；`SELF` 代表 `SMTP_USERNAME`。初始值为 `SELF,864814874@qq.com`。
+- `DAILY_REPORT_RECIPIENTS`：逗号、分号或换行分隔；`SELF` 代表 `SMTP_USERNAME`，例如 `SELF,other@example.com`。实际收件人只保存在 GitHub Variable 中。
 - `DAILY_REPORT_WATCHLIST`：可选自选股代码，例如 `600519,300750`；初始留空。
 
 每个收件人会收到独立邮件，不会看到其他邮箱地址。每日报告与投递去重状态保存到：

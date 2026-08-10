@@ -141,6 +141,13 @@ def _validate_email(value: str) -> str:
     return cleaned
 
 
+def recipient_delivery_key(address: str) -> str:
+    """生成公开去重状态使用的不可读收件人标识。"""
+    normalized = _validate_email(address).casefold()
+    digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+    return f"sha256:{digest}"
+
+
 def parse_recipients(raw: str, username: str) -> tuple[str, ...]:
     sender = _validate_email(username)
     source = raw.strip() or "SELF"
@@ -1258,9 +1265,36 @@ def build_report(
 
 
 def load_delivery_state(path: Path) -> dict[str, Any]:
-    state = read_json(path, {"schema_version": 1, "reports": {}})
+    state = read_json(
+        path,
+        {
+            "schema_version": 2,
+            "recipient_key_scheme": "sha256-lowercase-email-v1",
+            "reports": {},
+        },
+    )
     if not isinstance(state, dict) or not isinstance(state.get("reports"), dict):
         raise CloseReportError(f"邮件去重状态结构异常: {path}")
+    # 兼容早期状态：加载时把明文邮箱键迁移为哈希，避免继续传播到公开仓库。
+    for date_entry in state["reports"].values():
+        if not isinstance(date_entry, dict):
+            raise CloseReportError(f"邮件去重状态结构异常: {path}")
+        for hash_entry in date_entry.values():
+            if not isinstance(hash_entry, dict):
+                raise CloseReportError(f"邮件去重状态结构异常: {path}")
+            sent_to = hash_entry.get("sent_to", {})
+            if not isinstance(sent_to, dict):
+                raise CloseReportError(f"邮件去重状态结构异常: {path}")
+            sanitized: dict[str, Any] = {}
+            for key, sent_at in sent_to.items():
+                value = str(key)
+                if re.fullmatch(r"sha256:[0-9a-f]{64}", value):
+                    sanitized[value] = sent_at
+                else:
+                    sanitized[recipient_delivery_key(value)] = sent_at
+            hash_entry["sent_to"] = sanitized
+    state["schema_version"] = 2
+    state["recipient_key_scheme"] = "sha256-lowercase-email-v1"
     return state
 
 
@@ -1273,7 +1307,7 @@ def delivered_recipients(
         .get(report_hash, {})
         .get("sent_to", {})
     )
-    return {str(item).casefold() for item in entry} if isinstance(entry, Mapping) else set()
+    return {str(item) for item in entry} if isinstance(entry, Mapping) else set()
 
 
 def record_delivery(
@@ -1286,7 +1320,7 @@ def record_delivery(
     reports = state.setdefault("reports", {})
     date_entry = reports.setdefault(trade_date, {})
     hash_entry = date_entry.setdefault(report_hash, {"sent_to": {}})
-    hash_entry.setdefault("sent_to", {})[recipient] = sent_at
+    hash_entry.setdefault("sent_to", {})[recipient_delivery_key(recipient)] = sent_at
     hash_entry["last_updated_at"] = sent_at
     for old_date in sorted(reports)[:-120]:
         reports.pop(old_date, None)
@@ -1630,7 +1664,7 @@ def send_report(
     skipped: list[str] = []
     failures: list[str] = []
     for recipient in mail.recipients:
-        if not resend and recipient.casefold() in delivered:
+        if not resend and recipient_delivery_key(recipient) in delivered:
             skipped.append(recipient)
             continue
         try:

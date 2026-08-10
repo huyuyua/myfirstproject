@@ -16,12 +16,12 @@ import daily_close_report as report
 class RecipientTests(unittest.TestCase):
     def test_recipients_support_self_multiple_separators_and_dedupe(self) -> None:
         actual = report.parse_recipients(
-            "SELF, 864814874@qq.com;OWNER@163.com\nthird@example.com",
+            "SELF, secondary@example.com;OWNER@163.com\nthird@example.com",
             "owner@163.com",
         )
         self.assertEqual(
             actual,
-            ("owner@163.com", "864814874@qq.com", "third@example.com"),
+            ("owner@163.com", "secondary@example.com", "third@example.com"),
         )
 
     def test_recipients_default_to_self(self) -> None:
@@ -170,7 +170,7 @@ class DeliveryStateTests(unittest.TestCase):
         mail = report.MailConfig(
             username="owner@163.com",
             password="secret",
-            recipients=("owner@163.com", "864814874@qq.com"),
+            recipients=("owner@163.com", "secondary@example.com"),
         )
         minimal = {"trade_date": "2026-08-10", "report_hash": "hash-1"}
         with tempfile.TemporaryDirectory() as directory:
@@ -179,7 +179,7 @@ class DeliveryStateTests(unittest.TestCase):
 
             def first_send(_mail, recipient, *_args, **_kwargs):
                 attempts.append(recipient)
-                if recipient.endswith("qq.com"):
+                if recipient == "secondary@example.com":
                     raise report.CloseReportError("temporary failure")
 
             with patch.object(report, "build_email", return_value=("s", "p", "h")), patch.object(
@@ -191,16 +191,40 @@ class DeliveryStateTests(unittest.TestCase):
             saved = json.loads(state_path.read_text(encoding="utf-8"))
             self.assertEqual(
                 report.delivered_recipients(saved, "2026-08-10", "hash-1"),
-                {"owner@163.com"},
+                {report.recipient_delivery_key("owner@163.com")},
             )
             retry_attempts: list[str] = []
             with patch.object(report, "build_email", return_value=("s", "p", "h")), patch.object(
                 report, "_send_one", side_effect=lambda _mail, recipient, *_args, **_kwargs: retry_attempts.append(recipient)
             ):
                 sent, skipped = report.send_report(mail, minimal, state_path)
-            self.assertEqual(sent, ["864814874@qq.com"])
+            self.assertEqual(sent, ["secondary@example.com"])
             self.assertEqual(skipped, ["owner@163.com"])
-            self.assertEqual(retry_attempts, ["864814874@qq.com"])
+            self.assertEqual(retry_attempts, ["secondary@example.com"])
+
+    def test_plaintext_recipient_state_is_migrated_to_hash(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            state_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "reports": {
+                            "2026-08-10": {
+                                "hash-1": {
+                                    "sent_to": {"owner@163.com": "2026-08-10T15:31:00+08:00"}
+                                }
+                            }
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            migrated = report.load_delivery_state(state_path)
+            keys = report.delivered_recipients(migrated, "2026-08-10", "hash-1")
+            self.assertEqual(keys, {report.recipient_delivery_key("owner@163.com")})
+            self.assertFalse(any("@" in key for key in keys))
+            self.assertEqual(migrated["schema_version"], 2)
 
 
 class OutlookTests(unittest.TestCase):
