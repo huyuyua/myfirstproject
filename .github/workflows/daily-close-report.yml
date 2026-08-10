@@ -2,8 +2,10 @@ name: A-share daily close report
 
 on:
   schedule:
-    # GitHub cron 使用 UTC；07:30 UTC 对应北京时间工作日 15:30。
-    - cron: "30 7 * * 1-5"
+    # GitHub cron 使用 UTC；北京时间 15:30 主触发，15:47、16:07、16:27 兜底。
+    # GitHub schedule 可能延迟或丢失；报告哈希与收件人状态会阻止重复邮件。
+    - cron: "30,47 7 * * 1-5"
+    - cron: "7,27 8 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
