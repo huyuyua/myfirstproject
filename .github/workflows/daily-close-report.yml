@@ -1,0 +1,75 @@
+name: A-share daily close report
+
+on:
+  schedule:
+    # GitHub cron 使用 UTC；07:30 UTC 对应北京时间工作日 15:30。
+    - cron: "30 7 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "允许使用尚未确认完整收盘的最新快照（仅人工检查）"
+        type: boolean
+        default: false
+      test_email:
+        description: "只测试当前多收件人邮件配置"
+        type: boolean
+        default: false
+      resend:
+        description: "忽略当日报告收件人去重状态并重新发送"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: a-share-daily-close-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      TZ: Asia/Shanghai
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
+      DAILY_REPORT_RECIPIENTS: ${{ vars.DAILY_REPORT_RECIPIENTS || 'SELF' }}
+      DAILY_REPORT_WATCHLIST: ${{ vars.DAILY_REPORT_WATCHLIST }}
+      FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.force || false }}
+      TEST_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.test_email || false }}
+      RESEND: ${{ github.event_name == 'workflow_dispatch' && inputs.resend || false }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Analyze market and send close report
+        shell: bash
+        run: |
+          args=()
+          if [[ "$FORCE_RUN" == "true" ]]; then args+=(--force); fi
+          if [[ "$TEST_EMAIL" == "true" ]]; then args+=(--test-email); fi
+          if [[ "$RESEND" == "true" ]]; then args+=(--resend); fi
+          python daily_close_report.py "${args[@]}"
+
+      - name: Persist report and delivery state
+        if: ${{ always() && env.TEST_EMAIL != 'true' }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -d docs/close-report ]]; then git add -A docs/close-report; fi
+          if [[ -f state/daily_close_report.json ]]; then git add state/daily_close_report.json; fi
+          if git diff --cached --quiet; then
+            echo "No close-report changes to commit"
+            exit 0
+          fi
+          git commit -m "data: update daily close report $(date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main

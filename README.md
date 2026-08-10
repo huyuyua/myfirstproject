@@ -59,6 +59,34 @@ python -m pip install -r .\requirements-abnormal-announcements.txt
 python .\abnormal_announcement_monitor.py --dry-run --lookback-days 3
 ```
 
+## 每日收盘复盘邮件
+
+独立工作流 `A-share daily close report` 在 A 股交易日北京时间 `15:30` 运行。脚本通过腾讯收盘时间校验自动跳过周末、节假日和未完成收盘的数据，并生成包含以下内容的中文 HTML/纯文本报告：
+
+- 上证、深证成指、创业板、科创50、沪深300的强弱和尾盘异动。
+- 沪深成交额相对前一交易日的放量/缩量，以及沪深京涨跌家数。
+- 涨停、跌停、炸板、封板率、成交额 Top20、行业板块 Top5。
+- 动态核心龙头、14:30 后的抢筹/回流/兑现判断，以及有证据的次日机会与风险。
+
+在 `Settings → Secrets and variables → Actions → Variables` 中维护：
+
+- `DAILY_REPORT_RECIPIENTS`：逗号、分号或换行分隔；`SELF` 代表 `SMTP_USERNAME`。初始值为 `SELF,864814874@qq.com`。
+- `DAILY_REPORT_WATCHLIST`：可选自选股代码，例如 `600519,300750`；初始留空。
+
+每个收件人会收到独立邮件，不会看到其他邮箱地址。每日报告与投递去重状态保存到：
+
+- `docs/close-report/latest.html`、`latest.json`
+- `docs/close-report/history/YYYY/YYYY-MM-DD.html/json`
+- `state/daily_close_report.json`
+
+本地实时检查但不写文件、不发邮件：
+
+```powershell
+python .\daily_close_report.py --dry-run --force
+```
+
+可在 GitHub 的 `Actions → A-share daily close report → Run workflow` 中使用 `test_email` 验证当前收件人，或使用 `resend` 强制重发当日报告。
+
 ## 立即运行
 
 无需安装第三方包，使用 Python 3.9+：
