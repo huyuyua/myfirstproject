@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-11T17:11:25+08:00",
+  "generated_at": "2026-08-12T16:44:25+08:00",
   "reports": [
+    {
+      "trade_date": "2026-08-12",
+      "market_state": "震荡偏强",
+      "score": 44.3,
+      "tail_flow": "平稳",
+      "html": "history/2026/2026-08-12.html",
+      "json": "history/2026/2026-08-12.json"
+    },
     {
       "trade_date": "2026-08-11",
       "market_state": "平衡震荡",
