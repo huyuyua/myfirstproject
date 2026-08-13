@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "trade_date": "2026-08-13",
-  "generated_at": "2026-08-13T16:51:14+08:00",
+  "generated_at": "2026-08-13T17:21:03+08:00",
   "data_status": "complete",
   "market": {
     "state": "平衡震荡",
@@ -599,7 +599,7 @@
       "leader_code": "300404",
       "leader_name": "博济医药",
       "leader_change_pct": 20.02,
-      "tail_change_pct": -0.883,
+      "tail_change_pct": -0.882,
       "leader_state": "加强",
       "leader_tail_change_pct": 0.0
     },
@@ -659,7 +659,7 @@
       "leader_code": "300534",
       "leader_name": "陇神戎发",
       "leader_change_pct": 19.97,
-      "tail_change_pct": -0.365,
+      "tail_change_pct": -0.364,
       "leader_state": "加强",
       "leader_tail_change_pct": 0.0
     }
@@ -844,5 +844,5 @@
   "source": "Tencent Finance public market endpoints",
   "universe_note": "涨跌家数与涨跌停包含沪深京；成交额仅为沪深两市。",
   "disclaimer": "本报告仅为公开行情的规则化复盘，不构成任何投资建议。",
-  "report_hash": "a49748f1ed01683abc70b124dda39dbac7cb8a5263c03901975428cc4abdece7"
+  "report_hash": "5bdaeccb77b37e61360f16f3f0f8510f0279621f1621c4640d960bd9d8798d74"
 }
