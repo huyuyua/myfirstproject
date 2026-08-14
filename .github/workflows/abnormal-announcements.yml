@@ -2,8 +2,9 @@ name: A-share abnormal announcements
 
 on:
   schedule:
-    # GitHub cron 使用 UTC；00:00 UTC 对应北京时间工作日 08:00。
-    - cron: "0 0 * * 1-5"
+    # GitHub cron 使用 UTC；每天北京时间 21:00 主扫描，次日 08:00 补漏扫描。
+    - cron: "0 13 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       lookback_days:
@@ -12,6 +13,10 @@ on:
         default: "3"
       test_email:
         description: "只发送163邮箱配置测试邮件，不推进扫描状态"
+        type: boolean
+        default: false
+      catch_up_previous_day:
+        description: "从昨天00:00重新扫描并仅补发遗漏公告"
         type: boolean
         default: false
 
@@ -33,6 +38,7 @@ jobs:
       ALERT_TO: ${{ secrets.ALERT_TO }}
       LOOKBACK_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.lookback_days || '3' }}
       TEST_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.test_email || false }}
+      CATCH_UP_PREVIOUS_DAY: ${{ github.event.schedule == '0 0 * * *' || inputs.catch_up_previous_day || false }}
 
     steps:
       - name: Checkout repository
@@ -53,6 +59,7 @@ jobs:
         run: |
           args=(--lookback-days "$LOOKBACK_DAYS")
           if [[ "$TEST_EMAIL" == "true" ]]; then args+=(--test-email); fi
+          if [[ "$CATCH_UP_PREVIOUS_DAY" == "true" ]]; then args+=(--catch-up-previous-day); fi
           python abnormal_announcement_monitor.py "${args[@]}"
 
       - name: Persist scan history back to repository

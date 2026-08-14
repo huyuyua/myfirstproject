@@ -759,17 +759,27 @@ def load_state(path: Path = DEFAULT_STATE_PATH) -> dict[str, Any]:
 
 
 def determine_window_start(
-    now: datetime, state: Mapping[str, Any], lookback_days: int
+    now: datetime,
+    state: Mapping[str, Any],
+    lookback_days: int,
+    catch_up_previous_day: bool = False,
 ) -> datetime:
+    regular_start = now - timedelta(days=lookback_days)
     last_scan = state.get("last_successful_scan")
     if last_scan:
         try:
             parsed = datetime.fromisoformat(str(last_scan)).astimezone(TIMEZONE)
             # 两小时重叠窗口，抵御腾讯公告入库延迟，邮件仍按公告 ID 去重。
-            return max(parsed - timedelta(hours=2), now - timedelta(days=14))
+            regular_start = max(parsed - timedelta(hours=2), now - timedelta(days=14))
         except ValueError:
             pass
-    return now - timedelta(days=lookback_days)
+    if catch_up_previous_day:
+        previous_day_start = (now - timedelta(days=1)).replace(
+            hour=0, minute=0, second=0, microsecond=0
+        )
+        # 早盘重新覆盖昨天全天；已发送公告仍由 emailed_ids 按公告 ID 去重。
+        return min(regular_start, previous_day_start)
+    return regular_start
 
 
 @dataclass(frozen=True)
@@ -1023,7 +1033,7 @@ def update_state(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="腾讯财经 A 股盘前异动公告监控")
+    parser = argparse.ArgumentParser(description="腾讯财经 A 股异动公告监控")
     parser.add_argument("--lookback-days", type=int, default=DEFAULT_LOOKBACK_DAYS)
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS)
@@ -1033,6 +1043,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--docs-dir", type=Path, default=DEFAULT_DOCS_DIR)
     parser.add_argument("--dry-run", action="store_true", help="扫描但不发邮件、不写状态")
     parser.add_argument("--test-email", action="store_true", help="发送163配置测试邮件，不推进状态")
+    parser.add_argument(
+        "--catch-up-previous-day",
+        action="store_true",
+        help="从昨天00:00重新扫描，按公告ID仅补发遗漏项",
+    )
     return parser
 
 
@@ -1046,7 +1061,12 @@ def run(args: argparse.Namespace, now: datetime | None = None) -> dict[str, Any]
 
     scan_at = (now or datetime.now(TIMEZONE)).astimezone(TIMEZONE)
     state = load_state(args.state_path)
-    window_start = determine_window_start(scan_at, state, args.lookback_days)
+    window_start = determine_window_start(
+        scan_at,
+        state,
+        args.lookback_days,
+        catch_up_previous_day=args.catch_up_previous_day,
+    )
     client = TencentClient(timeout=args.timeout, retries=args.retries, workers=args.workers)
 
     stocks = client.fetch_a_share_universe()
@@ -1065,6 +1085,9 @@ def run(args: argparse.Namespace, now: datetime | None = None) -> dict[str, Any]
         "scan_at": scan_at.isoformat(timespec="seconds"),
         "window_start": window_start.isoformat(timespec="seconds"),
         "window_end": scan_at.isoformat(timespec="seconds"),
+        "scan_mode": (
+            "previous-day-catch-up" if args.catch_up_previous_day else "incremental"
+        ),
         "stock_count": len(stocks),
         "abnormal_announcement_count": len(records),
         "matched_count": len(matched),

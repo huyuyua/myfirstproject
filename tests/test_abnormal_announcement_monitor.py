@@ -95,6 +95,22 @@ class WindowTests(unittest.TestCase):
         start = determine_window_start(now, state, 7)
         self.assertEqual(start, datetime(2026, 8, 10, 6, 0, tzinfo=TIMEZONE))
 
+    def test_morning_catchup_rescans_previous_calendar_day(self):
+        now = datetime(2026, 8, 11, 8, 0, tzinfo=TIMEZONE)
+        state = {"last_successful_scan": "2026-08-10T21:00:00+08:00"}
+        start = determine_window_start(
+            now, state, 3, catch_up_previous_day=True
+        )
+        self.assertEqual(start, datetime(2026, 8, 10, 0, 0, tzinfo=TIMEZONE))
+
+    def test_catchup_keeps_older_unfinished_window(self):
+        now = datetime(2026, 8, 11, 8, 0, tzinfo=TIMEZONE)
+        state = {"last_successful_scan": "2026-08-08T21:00:00+08:00"}
+        start = determine_window_start(
+            now, state, 3, catch_up_previous_day=True
+        )
+        self.assertEqual(start, datetime(2026, 8, 8, 19, 0, tzinfo=TIMEZONE))
+
 
 class ArtifactTests(unittest.TestCase):
     def test_json_csv_and_index_are_persisted(self):
