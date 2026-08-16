@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-16",
+  "runs": [
+    {
+      "scan_at": "2026-08-16T09:21:51+08:00",
+      "window_start": "2026-08-15T00:00:00+08:00",
+      "window_end": "2026-08-16T09:21:51+08:00",
+      "stock_count": 5543,
+      "abnormal_announcement_count": 0,
+      "matched_count": 0,
+      "new_email_count": 0
+    }
+  ],
+  "announcements": []
+}
