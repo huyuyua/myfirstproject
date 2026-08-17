@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "scan_at": "2026-08-17T09:18:34+08:00",
+  "scan_at": "2026-08-17T16:09:25+08:00",
   "window_start": "2026-08-16T00:00:00+08:00",
-  "window_end": "2026-08-17T09:18:34+08:00",
+  "window_end": "2026-08-17T16:09:25+08:00",
   "scan_mode": "previous-day-catch-up",
   "stock_count": 5544,
   "abnormal_announcement_count": 0,
