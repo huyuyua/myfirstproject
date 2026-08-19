@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "trade_date": "2026-08-19",
-  "generated_at": "2026-08-19T16:03:56+08:00",
+  "generated_at": "2026-08-19T16:50:08+08:00",
   "data_status": "complete",
   "market": {
     "state": "弱势退潮",
@@ -659,7 +659,7 @@
       "leader_code": "601009",
       "leader_name": "南京银行",
       "leader_change_pct": 2.53,
-      "tail_change_pct": 0.174,
+      "tail_change_pct": 0.173,
       "leader_state": "分歧",
       "leader_tail_change_pct": 0.0
     }
@@ -847,5 +847,5 @@
   "source": "Tencent Finance public market endpoints",
   "universe_note": "涨跌家数与涨跌停包含沪深京；成交额仅为沪深两市。",
   "disclaimer": "本报告仅为公开行情的规则化复盘，不构成任何投资建议。",
-  "report_hash": "c8020195e896cbdc1cbfbd7cf1d5518919fa3dd90839f50610cb9231915bd8fc"
+  "report_hash": "f1532f19e7c4df05d4ac00557e523200794914d07bcccbdda0cc36dd323ed832"
 }
