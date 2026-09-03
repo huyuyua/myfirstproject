@@ -10,6 +10,15 @@
       "abnormal_announcement_count": 20,
       "matched_count": 15,
       "new_email_count": 15
+    },
+    {
+      "scan_at": "2026-09-03T11:22:56+08:00",
+      "window_start": "2026-09-02T00:00:00+08:00",
+      "window_end": "2026-09-03T11:22:56+08:00",
+      "stock_count": 5555,
+      "abnormal_announcement_count": 21,
+      "matched_count": 16,
+      "new_email_count": 1
     }
   ],
   "announcements": [
@@ -481,6 +490,31 @@
       "detail_excerpt": "证券代码：605068证券简称：明新旭腾公告编号：2026-082 转债代码：111004转债简称：明新转债 明新旭腾新材料股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述 或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： *明新旭腾新材料股份有限公司（以下简称“公司”或“本公司”）股票 于2026年8月31日、9月1日、9月2日连续三个交易日内日收盘价格涨幅偏 离值累计超过20%。根据《上海证券交易所交易规则》的有关规定，属于股票交易异常波动情形。 *经公司自查并向控股股东及实际控制人核实，截至目前，不存在应披露而未披露的重大事项。 *2026年9月2日，公司股票换手率为8.53%（前五个交易日日均换手率3.18%），存在换手率过高风险，公司敬请广大投资者注意二级市场交易风险， 理性决策，审慎投资。 *公司于2026年8月27日披露了《明新旭腾2026年半年度报告》，公司 2026年半年度实现归属于上市公司股东的净利润为-4780.30万元，归属于上市 公司股东的扣除非经常性损益的净利润为-5919.",
       "tencent_url": "https://gu.qq.com/sh605068/gp/notice/nos1225543599",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/09/03/1225543599.PDF",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100022684223",
+      "symbol": "bj920212",
+      "code": "920212",
+      "name": "智新电子",
+      "title": "[临时公告]智新电子:股票交易异常波动公告",
+      "published_at": "2026-09-02T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100022684223"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100022684223",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920212/gp/notice/nosnob100022684223",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ]
