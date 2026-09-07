@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-04T20:41:06+08:00",
+  "generated_at": "2026-09-07T21:37:45+08:00",
   "reports": [
+    {
+      "trade_date": "2026-09-07",
+      "market_state": "震荡偏强",
+      "score": 48.0,
+      "tail_flow": "平稳",
+      "html": "history/2026/2026-09-07.html",
+      "json": "history/2026/2026-09-07.json"
+    },
     {
       "trade_date": "2026-09-04",
       "market_state": "结构分化",
