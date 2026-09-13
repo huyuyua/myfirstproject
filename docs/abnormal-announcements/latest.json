@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "scan_at": "2026-09-12T23:56:50+08:00",
-  "window_start": "2026-09-12T09:34:19+08:00",
-  "window_end": "2026-09-12T23:56:50+08:00",
-  "scan_mode": "incremental",
+  "scan_at": "2026-09-13T11:40:20+08:00",
+  "window_start": "2026-09-12T00:00:00+08:00",
+  "window_end": "2026-09-13T11:40:20+08:00",
+  "scan_mode": "previous-day-catch-up",
   "stock_count": 5562,
   "abnormal_announcement_count": 0,
   "matched_count": 0,
