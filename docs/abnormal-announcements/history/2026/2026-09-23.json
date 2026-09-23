@@ -10,6 +10,15 @@
       "abnormal_announcement_count": 20,
       "matched_count": 17,
       "new_email_count": 17
+    },
+    {
+      "scan_at": "2026-09-23T11:44:19+08:00",
+      "window_start": "2026-09-22T00:00:00+08:00",
+      "window_end": "2026-09-23T11:44:19+08:00",
+      "stock_count": 5568,
+      "abnormal_announcement_count": 21,
+      "matched_count": 18,
+      "new_email_count": 1
     }
   ],
   "announcements": [
@@ -493,6 +502,31 @@
       "detail_excerpt": "证券代码：600503 证券简称：华丽家族 公告编号：临2026－018 华丽家族股份有限公司 关于股票交易异常波动的公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述 或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： * 华丽家族股份有限公司（以下简称“公司”）股票于2026年9月18日、2026年9月21日、2026年9月22日连续3个交易日收盘价格涨幅偏离值累计超 过20%，根据《上海证券交易所交易规则》的有关规定，属于股票交易异常波动情形。 * 经公司自查并向控股股东、实际控制人核实，截至本公告披露日，不存在应披露而未披露的重大事项。 * 敬请广大投资者注意二级市场交易风险，理性决策，审慎投资。 一、股票交易异常波动的具体情况 公司股票于 2026年 9月 18日、2026年 9月 21日、2026年 9月 22日连续 3个交易日收盘价格涨幅偏离值累计超过 20%，根据《上海证券交易所交易规则》 的有关规定，属于股票交易异常波动情形。 二、公司关注并核实的相关情况 （一）生产经营情况 经公司自查，公司目前生产经营正常，内外部环",
       "tencent_url": "https://gu.qq.com/sh600503/gp/notice/nos1225576444",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/09/23/1225576444.PDF",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023185934",
+      "symbol": "bj920427",
+      "code": "920427",
+      "name": "华维设计",
+      "title": "[临时公告]华维设计:股票交易异常波动公告",
+      "published_at": "2026-09-22T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023185934"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023185934",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920427/gp/notice/nosnob100023185934",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ]
