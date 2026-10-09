@@ -10,6 +10,15 @@
       "abnormal_announcement_count": 13,
       "matched_count": 9,
       "new_email_count": 9
+    },
+    {
+      "scan_at": "2026-10-09T13:01:14+08:00",
+      "window_start": "2026-10-08T00:00:00+08:00",
+      "window_end": "2026-10-09T13:01:14+08:00",
+      "stock_count": 5573,
+      "abnormal_announcement_count": 16,
+      "matched_count": 12,
+      "new_email_count": 3
     }
   ],
   "announcements": [
@@ -312,6 +321,81 @@
       "detail_excerpt": "证券代码：600241 证券简称：时代万恒 编号：临 2026-025 辽宁时代万恒股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： * 辽宁时代万恒股份有限公司（以下简称“公司”）股票于 2026年 9 月 30 日和 2026 年 10 月 8 日连续两个交易日内日收盘价格涨幅偏 离值累计超过 20%。根据《上海证券交易所交易规则》等相关规定，上述情形属于股票交易异常波动。公司股票价格短期波动较大，可能存在非理性炒作等情形，公司股票存在股价大幅上涨后快速回落的风险，敬请广大投资者注意二级市场交易风险，理性决策，审慎投资。 * 经公司自查，并发函询问控股股东，截至本公告披露日，确认不存在应披露而未披露的重大事项或重要信息。 * 公司现有主要产品及生产线均未发生变化，生产经营基本面亦未发生重大变化。2025 年度，公司实现归属于上市公司股东的净利润-13181.71 万元。2026 年上半年，公司实现归属于上市公司股东的净利润-1245.99 万元。敬请广",
       "tencent_url": "https://gu.qq.com/sh600241/gp/notice/nos1225597023",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597023.PDF",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023586628",
+      "symbol": "bj920779",
+      "code": "920779",
+      "name": "武汉蓝电",
+      "title": "[临时公告]武汉蓝电:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023586628"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023586628",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920779/gp/notice/nosnob100023586628",
+      "pdf_url": "",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023590870",
+      "symbol": "bj920627",
+      "code": "920627",
+      "name": "力王股份",
+      "title": "[临时公告]力王股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590870"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590870",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920627/gp/notice/nosnob100023590870",
+      "pdf_url": "",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023590573",
+      "symbol": "bj920202",
+      "code": "920202",
+      "name": "安达股份",
+      "title": "[临时公告]安达股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590573"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590573",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920202/gp/notice/nosnob100023590573",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ]

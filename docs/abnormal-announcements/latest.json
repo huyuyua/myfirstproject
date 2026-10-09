@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "scan_at": "2026-10-09T03:05:44+08:00",
-  "window_start": "2026-10-08T10:58:05+08:00",
-  "window_end": "2026-10-09T03:05:44+08:00",
-  "scan_mode": "incremental",
-  "stock_count": 5572,
-  "abnormal_announcement_count": 13,
-  "matched_count": 9,
-  "new_email_count": 9,
+  "scan_at": "2026-10-09T13:01:14+08:00",
+  "window_start": "2026-10-08T00:00:00+08:00",
+  "window_end": "2026-10-09T13:01:14+08:00",
+  "scan_mode": "previous-day-catch-up",
+  "stock_count": 5573,
+  "abnormal_announcement_count": 16,
+  "matched_count": 12,
+  "new_email_count": 3,
   "announcements": [
     {
       "id": "nos1225598272",
@@ -309,6 +309,81 @@
       "tencent_url": "https://gu.qq.com/sh600241/gp/notice/nos1225597023",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597023.PDF",
       "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023586628",
+      "symbol": "bj920779",
+      "code": "920779",
+      "name": "武汉蓝电",
+      "title": "[临时公告]武汉蓝电:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023586628"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023586628",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920779/gp/notice/nosnob100023586628",
+      "pdf_url": "",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023590870",
+      "symbol": "bj920627",
+      "code": "920627",
+      "name": "力王股份",
+      "title": "[临时公告]力王股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590870"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590870",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920627/gp/notice/nosnob100023590870",
+      "pdf_url": "",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023590573",
+      "symbol": "bj920202",
+      "code": "920202",
+      "name": "安达股份",
+      "title": "[临时公告]安达股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590573"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590573",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920202/gp/notice/nosnob100023590573",
+      "pdf_url": "",
+      "source": "tencent_finance"
     }
   ],
   "matched_announcements": [
@@ -536,232 +611,157 @@
       "tencent_url": "https://gu.qq.com/sh600241/gp/notice/nos1225597023",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597023.PDF",
       "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023586628",
+      "symbol": "bj920779",
+      "code": "920779",
+      "name": "武汉蓝电",
+      "title": "[临时公告]武汉蓝电:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023586628"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023586628",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920779/gp/notice/nosnob100023586628",
+      "pdf_url": "",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023590870",
+      "symbol": "bj920627",
+      "code": "920627",
+      "name": "力王股份",
+      "title": "[临时公告]力王股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590870"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590870",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920627/gp/notice/nosnob100023590870",
+      "pdf_url": "",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023590573",
+      "symbol": "bj920202",
+      "code": "920202",
+      "name": "安达股份",
+      "title": "[临时公告]安达股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590573"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590573",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920202/gp/notice/nosnob100023590573",
+      "pdf_url": "",
+      "source": "tencent_finance"
     }
   ],
   "new_alerts": [
     {
-      "id": "nos1225598221",
-      "symbol": "sz002242",
-      "code": "002242",
-      "name": "九阳股份",
-      "title": "九阳股份：九阳股份股票交易异常波动公告",
-      "published_at": "2026-10-08T20:38:13+08:00",
-      "direction": "up",
+      "id": "nob100023586628",
+      "symbol": "bj920779",
+      "code": "920779",
+      "name": "武汉蓝电",
+      "title": "[临时公告]武汉蓝电:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
       "categories": [
-        "twenty_percent_deviation"
+        "manual_review"
       ],
       "category_labels": [
-        "20%偏离异动"
+        "正文解析失败，需人工核验"
       ],
       "evidence": [
-        "有虚假记载、误导性陈述或重大遗漏。重要内容提示：1、公司股票交易价格于2026年9月30日、10月8日连续两个交易日内收盘价格涨幅偏离值累计超过20%。根据深圳证券交易所有关规定，属于股票交易异常波动情况。敬请广大投资者务必充分了解二级市场交易风险，理性决策，审慎投资。2、公司于"
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023586628"
       ],
       "down_occurrence_30d": null,
-      "detail_status": "pdf",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：002242 证券简称：九阳股份 公告编号：2026-031 九阳股份有限公司 股票交易异常波动公告 本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性 陈述或重大遗漏。 重要内容提示： 1、公司股票交易价格于2026年9月30日、10月8日连续两个交易日内收盘价格涨 幅偏离值累计超过20%。根据深圳证券交易所有关规定，属于股票交易异常波动情 况。敬请广大投资者务必充分了解二级市场交易风险，理性决策，审慎投资。 2、公司于2026年8月22日披露了《2026年半年度报告》，公司2026年上半年实 现营业收入34.89亿元，同比下降12.49%。实现归属于上市公司股东的净利润7,177.32 万元，同比下降41.52%。公司拟于2026年10月24日披露《2026年第三季度报告》， 公司不存在需披露相关业绩预告的情形。公司相关未公开的定期业绩信息不存在 泄露的情形。 3、公司关注到近期市场对相关热点概念关注度较高。经核实，现就相关情况 说明如下： （一）关于“关税调整”相关事项 2026年半年度，公司境外营业收入为3.07亿元，占营业收入比重为8.7",
-      "tencent_url": "https://gu.qq.com/sz002242/gp/notice/nos1225598221",
-      "pdf_url": "https://file.finance.qq.com//finance/hs/pdf/2026/10/09/1225598221.PDF",
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023586628",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920779/gp/notice/nosnob100023586628",
+      "pdf_url": "",
       "source": "tencent_finance"
     },
     {
-      "id": "nos1225598097",
-      "symbol": "sh600663",
-      "code": "600663",
-      "name": "陆家嘴",
-      "title": "陆家嘴：股票交易异常波动公告",
-      "published_at": "2026-10-08T19:31:53+08:00",
-      "direction": "up",
+      "id": "nob100023590870",
+      "symbol": "bj920627",
+      "code": "920627",
+      "name": "力王股份",
+      "title": "[临时公告]力王股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
       "categories": [
-        "twenty_percent_deviation"
+        "manual_review"
       ],
       "category_labels": [
-        "20%偏离异动"
+        "正文解析失败，需人工核验"
       ],
       "evidence": [
-        "股票陆家嘴（股票代码：600663）于2026年9月29日、2026年9月30日、2026年10月8日连续三个交易日内收盘价格涨幅偏离值累计超过20%，根据《上海证券交易所交易规则》的有关规定，属于股票交易异常波动情形。*经公司自查，并向公司控股股东征询，截至本公告披露日，不存在"
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590870"
       ],
       "down_occurrence_30d": null,
-      "detail_status": "inline",
-      "detail_error": "",
-      "detail_excerpt": "股票代码：A 股：600663 股票简称：陆家嘴 编号：临 2026-037 B 股：900932 陆家 B股 上海陆家嘴金融贸易区开发股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈 述或重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： * 上海陆家嘴金融贸易区开发股份有限公司（以下简称“公司”）A股股票 陆家嘴（股票代码：600663）于 2026 年 9 月 29 日、2026 年 9 月 30 日、2026年 10月 8日连续三个交易日内收盘价格涨幅偏离值累计超过 20%，根据《上海证券交易所交易规则》的有关规定，属于股票交易异常波动情形。 * 经公司自查，并向公司控股股东征询，截至本公告披露日，不存在应披露而未披露的重大事项。 * 根据中证指数有限公司官方网站发布的截至 2026年 10月 8日的数据，公司所属的行业分类“K70房地产业”最新滚动市盈率为 9.74倍，公司 A股最新滚动市盈率为 36.87倍，显著高于同行业水平。公司敬请广大投资者注意投资风险，理性决策，审慎投资。 一、股票交易异常波",
-      "tencent_url": "https://gu.qq.com/sh600663/gp/notice/nos1225598097",
-      "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225598097.PDF",
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590870",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920627/gp/notice/nosnob100023590870",
+      "pdf_url": "",
       "source": "tencent_finance"
     },
     {
-      "id": "nos603906_20261009_ZV3D",
-      "symbol": "sh603906",
-      "code": "603906",
-      "name": "龙蟠科技",
-      "title": "江苏龙蟠科技集团股份有限公司股票交易异常波动公告",
-      "published_at": "2026-10-08T19:31:10+08:00",
-      "direction": "up",
+      "id": "nob100023590573",
+      "symbol": "bj920202",
+      "code": "920202",
+      "name": "安达股份",
+      "title": "[临时公告]安达股份:股票交易异常波动公告",
+      "published_at": "2026-10-08T00:00:00+08:00",
+      "direction": "unknown",
       "categories": [
-        "twenty_percent_deviation"
+        "manual_review"
       ],
       "category_labels": [
-        "20%偏离异动"
+        "正文解析失败，需人工核验"
       ],
       "evidence": [
-        "重要内容提示江苏龙蟠科技集团股份有限公司（以下简称“公司”）股票于2026年9月30日、10月8日连续2个交易日内收盘价格涨幅偏离值累计超过20%，根据《上海证券交易所交易规则》有关规定，属于股票交易异常波动情形。2026年10月8日，公司二级控股子公司南京锂源纳米科技有限"
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023590573"
       ],
       "down_occurrence_30d": null,
-      "detail_status": "pdf",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：603906 证券简称：龙蟠科技 公告编号：2026-151 江苏龙蟠科技集团股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述 或者重大遗漏，并对其内容的真实性、准确性和完整性承担个别及连带责任。 重要内容提示  江苏龙蟠科技集团股份有限公司（以下简称“公司”）股票于 2026 年 9 月 30 日、10 月 8 日连续 2 个交易日内收盘价格涨幅偏离值累计超过 20%，根据 《上海证券交易所交易规则》有关规定，属于股票交易异常波动情形。  2026 年 10 月 8 日，公司二级控股子公司南京锂源纳米科技有限公司（以 下简称“南京锂源”）与浙江吉曜通行能源科技有限公司（以下简称“吉曜通行”） 签署了《战略合作框架协议》。协议约定，在产品结算价格具备竞争力，且交货 周期及质量、技术符合要求的情况下，由南京锂源及其关联生产方自 2026 年至 2030 年期间合计向吉曜通行销售 37.86-56.78 万吨磷酸铁锂正极材料，具体销售 量根据订单确定。具体单价受主要原材料价格波动影响，由双方根据协议条款逐 月确定。具体请见",
-      "tencent_url": "https://gu.qq.com/sh603906/gp/notice/nos603906_20261009_ZV3D",
-      "pdf_url": "https://file.finance.qq.com//finance/hs/pdf/2026/10/09/603906_20261009_ZV3D.pdf",
-      "source": "tencent_finance"
-    },
-    {
-      "id": "nos1225597823",
-      "symbol": "sz002074",
-      "code": "002074",
-      "name": "国轩高科",
-      "title": "国轩高科：股票交易异常波动公告",
-      "published_at": "2026-10-08T18:55:33+08:00",
-      "direction": "up",
-      "categories": [
-        "twenty_percent_deviation"
-      ],
-      "category_labels": [
-        "20%偏离异动"
-      ],
-      "evidence": [
-        "券简称：国轩高科，证券代码：002074）股票交易价格连续三个交易日内（2026年9月29日、9月30日及10月8日）收盘价格涨幅偏离值累计超过20%，根据《深圳证券交易所交易规则》等有关规定，属于股票交易异常波动的情形。二、公司关注及核实情况说明针对公司股票交易异常波动情况，公"
-      ],
-      "down_occurrence_30d": null,
-      "detail_status": "inline",
-      "detail_error": "",
-      "detail_excerpt": "证券简称：国轩高科 证券代码：002074 公告编号：2026-076 国轩高科股份有限公司股票交易异常波动公告 本公司及董事会全体成员保证信息披露的内容真实、准确和完整，没有虚假记载、误导性陈述或重大遗漏。 一、股票交易异常波动情况介绍 国轩高科股份有限公司（以下简称“公司”，证券简称：国轩高科，证券代码：002074）股票交易价格连续三个交易日内（2026年9月29日、9月30日及10月8日）收盘价格涨幅偏离值累计超过20%，根据《深圳证券交易所交易规则》等有关规定，属于股票交易异常波动的情形。 二、公司关注及核实情况说明 针对公司股票交易异常波动情况，公司进行了自查，并向公司控股股东、实际控制人就相关事项进行了核实，现就有关情况说明如下： 1、公司于2026年9月28日召开第十届董事会第四次会议，审议通过《关于与关联方共同投资暨关联交易的议案》，公司及公司全资下属企业Gotion High-Tech(HK)Limited、Gotion GmbH、Gotion Power Africa S.A.S.（以下合称“国轩方”）与大众汽车股份公司及其全资下属企业PowerCo SE、Pow",
-      "tencent_url": "https://gu.qq.com/sz002074/gp/notice/nos1225597823",
-      "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597823.PDF",
-      "source": "tencent_finance"
-    },
-    {
-      "id": "nos1225597767",
-      "symbol": "sz002882",
-      "code": "002882",
-      "name": "金龙羽",
-      "title": "金龙羽：股票交易异常波动公告",
-      "published_at": "2026-10-08T18:26:15+08:00",
-      "direction": "up",
-      "categories": [
-        "twenty_percent_deviation"
-      ],
-      "category_labels": [
-        "20%偏离异动"
-      ],
-      "evidence": [
-        "司”）股票（证券简称：金龙羽，证券代码：002882）于2026年9月29日、9月30日、10月8日连续三个交易日内日收盘价格涨幅偏离值累计超过20%，根据《深圳证券交易所交易规则》的有关规定，属于股票交易异常波动的情形。2.经公司自查并向公司控股股东、实际控制人及其一致行动人核"
-      ],
-      "down_occurrence_30d": null,
-      "detail_status": "pdf",
-      "detail_error": "",
-      "detail_excerpt": "1 证券代码：002882 证券简称：金龙羽 公告编号：2026-047 金龙羽集团股份有限公司 股票交易异常波动公告 本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假 记载、误导性陈述或重大遗漏。 重要内容提示： 1.金龙羽集团股份有限公司（以下简称“公司”、“本公司”）股票（证券 简称：金龙羽，证券代码：002882）于 2026 年 9 月 29 日、9 月 30 日、10 月 8 日连续三个交易日内日收盘价格涨幅偏离值累计超过 20％，根据《深圳证券交 易所交易规则》的有关规定，属于股票交易异常波动的情形。 2.经公司自查并向公司控股股东、实际控制人及其一致行动人核实，截至本 公告披露日，公司生产经营情况正常，未发生重大变化，不存在应披露而未披露 的重大信息。 一、股票交易异常波动的情况介绍 公司股票（证券简称：金龙羽，证券代码：002882）于 2026 年 9 月 29 日、 9 月 30 日、10 月 8 日连续三个交易日内日收盘价格涨幅偏离值累计超过 20％， 根据《深圳证券交易所交易规则》的有关规定，属于股票交易异常波动的情形。 二、公司关注、核实情",
-      "tencent_url": "https://gu.qq.com/sz002882/gp/notice/nos1225597767",
-      "pdf_url": "https://file.finance.qq.com//finance/hs/pdf/2026/10/09/1225597767.PDF",
-      "source": "tencent_finance"
-    },
-    {
-      "id": "nos1225597701",
-      "symbol": "sz000850",
-      "code": "000850",
-      "name": "华茂股份",
-      "title": "华茂股份：股票交易异常波动公告",
-      "published_at": "2026-10-08T18:23:24+08:00",
-      "direction": "down",
-      "categories": [
-        "twenty_percent_deviation"
-      ],
-      "category_labels": [
-        "20%偏离异动"
-      ],
-      "evidence": [
-        "异常波动的情况介绍安徽华茂纺织股份有限公司（以下简称“公司”）股票于2026年9月29日至10月08日连续三个交易日收盘价格涨跌幅偏离值累计超过-20%，根据《深圳证券交易所交易规则》的有关规定，属于股票交易异常波动情形。二、公司关注、核实情况说明针对公司股票交易异常波动，公司董事"
-      ],
-      "down_occurrence_30d": 1,
-      "detail_status": "inline",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：000850 证券简称：华茂股份 公告编号：2026-024 安徽华茂纺织股份有限公司股票交易异常波动公告 本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或者重大遗漏。 一、股票交易异常波动的情况介绍 安徽华茂纺织股份有限公司（以下简称“公司”）股票于2026年9月29日至10月08日连续三个交易日收盘价格涨跌幅偏离值累计超过-20%，根据《深圳证券交易所交易规则》的有关规定，属于股票交易异常波动情形。 二、公司关注、核实情况说明 针对公司股票交易异常波动，公司董事会进行了核查，并就有关事项函询控股股东，现将相关情况说明如下： 1、截至本公告披露日，公司未发现前期披露的信息存在需要更正、补充之处； 2、公司未发现近期公共媒体报道了可能或已经对公司股票交易价格产生较大影响的未公开重大信息； 3、近期公司经营情况正常，内外部经营环境未发生重大变化； 4、公司、控股股东和实际控制人不存在关于公司的应披露而未披露的重大事项，或处于筹划阶段的重大事项； 5、在本次股票异动期间，不存在公司控股股东、实际控制人买卖本公司股票的行为。 三、不存在应披露而未",
-      "tencent_url": "https://gu.qq.com/sz000850/gp/notice/nos1225597701",
-      "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597701.PDF",
-      "source": "tencent_finance"
-    },
-    {
-      "id": "nos603928_20261009_98GU",
-      "symbol": "sh603928",
-      "code": "603928",
-      "name": "兴业股份",
-      "title": "兴业股份股票交易异常波动公告",
-      "published_at": "2026-10-08T17:18:57+08:00",
-      "direction": "up",
-      "categories": [
-        "twenty_percent_deviation"
-      ],
-      "category_labels": [
-        "20%偏离异动"
-      ],
-      "evidence": [
-        "重要内容提示：●苏州兴业材料科技股份有限公司（以下简称“公司”）股票于2026年9月30日、10月8日连续两个交易日收盘价格涨幅偏离值累计达20%，根据《上海证券交易所股票交易规则》的有关规定，属于股票交易异常波动情形。中证指数有限公司2026年9月30日更新数据显示，公司静"
-      ],
-      "down_occurrence_30d": null,
-      "detail_status": "pdf",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：603928 证券简称：兴业股份 公告编号：2026-038 苏州兴业材料科技股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈 述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： ●苏州兴业材料科技股份有限公司（以下简称“公司”）股票于 2026 年 9 月 30 日、10 月 8 日连续两个交易日收盘价格涨幅偏离值累计达 20%，根据《上 海证券交易所股票交易规则》的有关规定，属于股票交易异常波动情形。中证 指数有限公司 2026 年 9 月 30 日更新数据显示，公司静态市盈率为 43.86，公 司所处的 C26 化学原料和化学制品制造业最新静态市盈率为 27.32，公司市盈 率高于行业平均水平。 ●公司的半导体光刻胶用酚醛树脂目前仅处于送样测试阶段，且送样客户 较少，因其要求较为严苛，尚处于性能、参数研发和试验匹配阶段，尚未签订 任何供货合同、暂未形成销售收入，最终能否成功市场化存在重大不确定性。 公司主营业务未发生变化。 ●经公司核查及向公司控股股东、实际控制人函证确认，不存在应披露而 ",
-      "tencent_url": "https://gu.qq.com/sh603928/gp/notice/nos603928_20261009_98GU",
-      "pdf_url": "https://file.finance.qq.com//finance/hs/pdf/2026/10/09/603928_20261009_98GU.pdf",
-      "source": "tencent_finance"
-    },
-    {
-      "id": "nos1225597002",
-      "symbol": "sh600152",
-      "code": "600152",
-      "name": "维科技术",
-      "title": "维科技术：维科技术股票交易异常波动公告",
-      "published_at": "2026-10-08T17:01:41+08:00",
-      "direction": "up",
-      "categories": [
-        "twenty_percent_deviation"
-      ],
-      "category_labels": [
-        "20%偏离异动"
-      ],
-      "evidence": [
-        "内容的真实性、准确性和完整性承担法律责任。重要内容提示：*公司股票于9月29日、9月30日、10月8日连续三个交易日内收盘价格涨幅偏离值累计超过20%，根据《上海证券交易所交易规则》的有关规定，公司股票交易属于异常波动的情形。*经公司自查及向控股股东及实际控制人征询确认：截至本公"
-      ],
-      "down_occurrence_30d": null,
-      "detail_status": "inline",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：600152 证券简称：维科技术 公告编号：2026-052 维科技术股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或 者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： * 公司股票于 9 月 29 日、9 月 30 日、10 月 8 日连续三个交易日内收盘价格 涨幅偏离值累计超过 20%，根据《上海证券交易所交易规则》的有关规定，公司股票交易属于异常波动的情形。 * 经公司自查及向控股股东及实际控制人征询确认：截至本公告披露日，公司及控股股东、实际控制人不存在应披露而未披露的重大事项或重大信息。 * 根据公司 2026 年 8 月 25 日披露的《维科技术 2026 年半年度报告》，公司 2026 年半年度实现归属于上市公司股东的净利润为-37278281.26 元； 2026 年半年度实现归属于上市公司股东的扣除非经常性损益后的净利润 为-38904663.85元。公司2026年半年度报告的财务数据未经审计，敬请广大投资者注意投资风险。 一、股票交易异常波动的具体情况 公司股票（股票代码：",
-      "tencent_url": "https://gu.qq.com/sh600152/gp/notice/nos1225597002",
-      "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597002.PDF",
-      "source": "tencent_finance"
-    },
-    {
-      "id": "nos1225597023",
-      "symbol": "sh600241",
-      "code": "600241",
-      "name": "时代万恒",
-      "title": "时代万恒：辽宁时代万恒股份有限公司股票交易异常波动公告",
-      "published_at": "2026-10-08T16:30:46+08:00",
-      "direction": "up",
-      "categories": [
-        "twenty_percent_deviation"
-      ],
-      "category_labels": [
-        "20%偏离异动"
-      ],
-      "evidence": [
-        "提示：*辽宁时代万恒股份有限公司（以下简称“公司”）股票于2026年9月30日和2026年10月8日连续两个交易日内日收盘价格涨幅偏离值累计超过20%。根据《上海证券交易所交易规则》等相关规定，上述情形属于股票交易异常波动。公司股票价格短期波动较大，可能存在非理性炒作等情形，公司"
-      ],
-      "down_occurrence_30d": null,
-      "detail_status": "inline",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：600241 证券简称：时代万恒 编号：临 2026-025 辽宁时代万恒股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： * 辽宁时代万恒股份有限公司（以下简称“公司”）股票于 2026年 9 月 30 日和 2026 年 10 月 8 日连续两个交易日内日收盘价格涨幅偏 离值累计超过 20%。根据《上海证券交易所交易规则》等相关规定，上述情形属于股票交易异常波动。公司股票价格短期波动较大，可能存在非理性炒作等情形，公司股票存在股价大幅上涨后快速回落的风险，敬请广大投资者注意二级市场交易风险，理性决策，审慎投资。 * 经公司自查，并发函询问控股股东，截至本公告披露日，确认不存在应披露而未披露的重大事项或重要信息。 * 公司现有主要产品及生产线均未发生变化，生产经营基本面亦未发生重大变化。2025 年度，公司实现归属于上市公司股东的净利润-13181.71 万元。2026 年上半年，公司实现归属于上市公司股东的净利润-1245.99 万元。敬请广",
-      "tencent_url": "https://gu.qq.com/sh600241/gp/notice/nos1225597023",
-      "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/09/1225597023.PDF",
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023590573",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920202/gp/notice/nosnob100023590573",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ],
