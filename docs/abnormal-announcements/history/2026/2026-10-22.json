@@ -10,6 +10,15 @@
       "abnormal_announcement_count": 20,
       "matched_count": 18,
       "new_email_count": 18
+    },
+    {
+      "scan_at": "2026-10-22T11:40:23+08:00",
+      "window_start": "2026-10-21T00:00:00+08:00",
+      "window_end": "2026-10-22T11:40:23+08:00",
+      "stock_count": 5577,
+      "abnormal_announcement_count": 21,
+      "matched_count": 19,
+      "new_email_count": 1
     }
   ],
   "announcements": [
@@ -499,6 +508,31 @@
       "detail_excerpt": "证券代码：600293 证券简称：三峡新材 编号：2026-040 湖北三峡新型建材股份有限公司 股票交易异常波动公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、 误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： * 湖北三峡新型建材股份有限公司（以下简称“公司”）股票 于 2026 年 10 月 20 日、10 月 21 日连续两个交易日内收盘价格 涨幅偏离值累计超过 20%，根据《上海证券交易所交易规则》的规定，公司股票交易属于异常波动情况。 * 公司于 2026 年 10 月 20 日披露了《湖北三峡新型建材股份有限公司发行股份及支付现金购买资产并募集配套资金暨关联交易预案》及相关公告。公司拟通过发行股份及支付现金的方式购买戴晓兵、安徽省合庐产业新城城发一号产业投资基金合伙企业（有限合伙）等 21名交易对方合计持有的珠海市赛纬电子 材料股份有限公司（以下简称“珠海赛纬”）100%股份，并拟向包括当阳市城市投资有限公司在内的不超过 35名特定投资者发 行股份募集配套资金不超过 10亿元（以下简称“本次交易”）。 本次交易所涉及资",
       "tencent_url": "https://gu.qq.com/sh600293/gp/notice/nos1225613857",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/10/22/1225613857.PDF",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100023926751",
+      "symbol": "bj920162",
+      "code": "920162",
+      "name": "莫森泰克",
+      "title": "[临时公告]莫森泰克:股票交易异常波动公告",
+      "published_at": "2026-10-21T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100023926751"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100023926751",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920162/gp/notice/nosnob100023926751",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ]
