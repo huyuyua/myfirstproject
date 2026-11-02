@@ -1,7 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-02T12:51:59+08:00",
+  "generated_at": "2026-11-03T06:02:21+08:00",
   "days": [
+    {
+      "date": "2026-11-03",
+      "json": "history/2026/2026-11-03.json",
+      "csv": "history/2026/2026-11-03.csv"
+    },
     {
       "date": "2026-11-02",
       "json": "history/2026/2026-11-02.json",
