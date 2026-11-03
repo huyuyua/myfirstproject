@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T22:59:54+08:00",
+  "generated_at": "2026-11-03T23:25:04+08:00",
   "reports": [
+    {
+      "trade_date": "2026-11-03",
+      "market_state": "震荡偏弱",
+      "score": -36.2,
+      "tail_flow": "分化",
+      "html": "history/2026/2026-11-03.html",
+      "json": "history/2026/2026-11-03.json"
+    },
     {
       "trade_date": "2026-10-30",
       "market_state": "弱势退潮",
