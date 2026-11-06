@@ -10,6 +10,15 @@
       "abnormal_announcement_count": 4,
       "matched_count": 1,
       "new_email_count": 1
+    },
+    {
+      "scan_at": "2026-11-06T13:31:34+08:00",
+      "window_start": "2026-11-05T00:00:00+08:00",
+      "window_end": "2026-11-06T13:31:34+08:00",
+      "stock_count": 5579,
+      "abnormal_announcement_count": 5,
+      "matched_count": 2,
+      "new_email_count": 1
     }
   ],
   "announcements": [
@@ -93,6 +102,31 @@
       "detail_excerpt": "证券简称：贝特利 证券代码：301697 公告编号：2026-015 苏州市贝特利高分子材料股份有限公司关于股票交易异常波动的公告 本公司及董事会全体成员保证公告内容真实、准确和完整，不存在任何虚假记载、误导性陈述或者重大遗漏。 重要内容提示： 1、公司股票于2026年11月3日、2026年11月4日、2026年11月5日连续三个交易日内收盘价格涨幅偏离值累计超过30%，连续2个交易日累计偏离36.71%。根据《深圳证券交易所创业板股票上市规则（2026年修订）》等有关规定，属于股票交易异常波动的情形。 2、经公司自查并向公司控股股东、实际控制人及其一致行动人核实，截至本公告披露日，不存在关于公司的应披露而未披露的重大事项，或处于筹划阶段的重大事项。 3、公司主营业务未发生变化且存在业绩不确定的风险。根据公司2026年10月29日在巨潮资讯网（http://www.cninfo.com.cn）披露的《2026年第三季度报告》全文及其摘要，公司2026年三季度实现营业收入3,968,125,021.53元，同比增长61.93%；归属于上市公司股东的净利润108,300,694.13元，同",
       "tencent_url": "https://gu.qq.com/sz301697/gp/notice/nos1225659788",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/11/06/1225659788.PDF",
+      "source": "tencent_finance"
+    },
+    {
+      "id": "nob100024383565",
+      "symbol": "bj920770",
+      "code": "920770",
+      "name": "艾能聚",
+      "title": "[临时公告]艾能聚:股票交易异常波动公告",
+      "published_at": "2026-11-05T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100024383565"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100024383565",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920770/gp/notice/nosnob100024383565",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ]

@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "scan_at": "2026-11-06T04:25:46+08:00",
-  "window_start": "2026-11-05T11:34:17+08:00",
-  "window_end": "2026-11-06T04:25:46+08:00",
-  "scan_mode": "incremental",
-  "stock_count": 5578,
-  "abnormal_announcement_count": 4,
-  "matched_count": 1,
+  "scan_at": "2026-11-06T13:31:34+08:00",
+  "window_start": "2026-11-05T00:00:00+08:00",
+  "window_end": "2026-11-06T13:31:34+08:00",
+  "scan_mode": "previous-day-catch-up",
+  "stock_count": 5579,
+  "abnormal_announcement_count": 5,
+  "matched_count": 2,
   "new_email_count": 1,
   "announcements": [
     {
@@ -90,6 +90,31 @@
       "tencent_url": "https://gu.qq.com/sz301697/gp/notice/nos1225659788",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/11/06/1225659788.PDF",
       "source": "tencent_finance"
+    },
+    {
+      "id": "nob100024383565",
+      "symbol": "bj920770",
+      "code": "920770",
+      "name": "艾能聚",
+      "title": "[临时公告]艾能聚:股票交易异常波动公告",
+      "published_at": "2026-11-05T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100024383565"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100024383565",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920770/gp/notice/nosnob100024383565",
+      "pdf_url": "",
+      "source": "tencent_finance"
     }
   ],
   "matched_announcements": [
@@ -117,32 +142,57 @@
       "tencent_url": "https://gu.qq.com/sh603578/gp/notice/nos1225659973",
       "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/11/06/1225659973.PDF",
       "source": "tencent_finance"
+    },
+    {
+      "id": "nob100024383565",
+      "symbol": "bj920770",
+      "code": "920770",
+      "name": "艾能聚",
+      "title": "[临时公告]艾能聚:股票交易异常波动公告",
+      "published_at": "2026-11-05T00:00:00+08:00",
+      "direction": "unknown",
+      "categories": [
+        "manual_review"
+      ],
+      "category_labels": [
+        "正文解析失败，需人工核验"
+      ],
+      "evidence": [
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100024383565"
+      ],
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100024383565",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920770/gp/notice/nosnob100024383565",
+      "pdf_url": "",
+      "source": "tencent_finance"
     }
   ],
   "new_alerts": [
     {
-      "id": "nos1225659973",
-      "symbol": "sh603578",
-      "code": "603578",
-      "name": "三星新材",
-      "title": "三星新材：关于公司股票交易异常波动的公告",
-      "published_at": "2026-11-05T18:02:45+08:00",
-      "direction": "down",
+      "id": "nob100024383565",
+      "symbol": "bj920770",
+      "code": "920770",
+      "name": "艾能聚",
+      "title": "[临时公告]艾能聚:股票交易异常波动公告",
+      "published_at": "2026-11-05T00:00:00+08:00",
+      "direction": "unknown",
       "categories": [
-        "twenty_percent_deviation"
+        "manual_review"
       ],
       "category_labels": [
-        "20%偏离异动"
+        "正文解析失败，需人工核验"
       ],
       "evidence": [
-        "提示：●浙江三星新材股份有限公司（以下简称“公司”）股票于2026年11月3日、11月4日、11月5日连续3个交易日内日收盘价跌幅偏离值累计超过20%，根据《上海证券交易所交易规则》的相关规定，属于股票交易异常波动的情形。●经公司自查并向控股股东及实际控制人书面发函查证，截至本公"
+        "正文解析失败：腾讯公告正文内容为空或过短: nosnob100024383565"
       ],
-      "down_occurrence_30d": 1,
-      "detail_status": "inline",
-      "detail_error": "",
-      "detail_excerpt": "证券代码：603578 证券简称：三星新材 公告编号：2026-068 浙江三星新材股份有限公司 关于公司股票交易异常波动的公告 本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述 或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示： ●浙江三星新材股份有限公司（以下简称“公司”）股票于 2026 年 11 月 3 日、 11 月 4 日、11 月 5 日连续 3 个交易日内日收盘价跌幅偏离值累计超过 20%，根 据《上海证券交易所交易规则》的相关规定，属于股票交易异常波动的情形。 ●经公司自查并向控股股东及实际控制人书面发函查证，截至本公告披露日，除已在指定媒体上公开披露的信息外，公司、控股股东、实际控制人确认不存在涉及公司的应披露而未披露的重大事项或重要信息。 ●公司敬请广大投资者注意二级市场交易风险，理性决策，审慎投资。 一、股票交易异常波动的具体情况 公司股票于 2026 年 11 月 3 日、11 月 4 日、11 月 5 日连续 3 个交易日内日 收盘价格跌幅偏离值累计超过 20%，根据《上海证券交易所交易规则》的有关规定，属于股票",
-      "tencent_url": "https://gu.qq.com/sh603578/gp/notice/nos1225659973",
-      "pdf_url": "https://file.finance.qq.com/finance/hs/pdf/2026/11/06/1225659973.PDF",
+      "down_occurrence_30d": null,
+      "detail_status": "error",
+      "detail_error": "腾讯公告正文内容为空或过短: nosnob100024383565",
+      "detail_excerpt": "",
+      "tencent_url": "https://gu.qq.com/bj920770/gp/notice/nosnob100024383565",
+      "pdf_url": "",
       "source": "tencent_finance"
     }
   ],
