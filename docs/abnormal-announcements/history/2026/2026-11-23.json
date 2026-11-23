@@ -10,6 +10,15 @@
       "abnormal_announcement_count": 2,
       "matched_count": 2,
       "new_email_count": 2
+    },
+    {
+      "scan_at": "2026-11-23T14:14:18+08:00",
+      "window_start": "2026-11-22T00:00:00+08:00",
+      "window_end": "2026-11-23T14:14:18+08:00",
+      "stock_count": 5581,
+      "abnormal_announcement_count": 2,
+      "matched_count": 2,
+      "new_email_count": 0
     }
   ],
   "announcements": [
